@@ -16,7 +16,7 @@ public class PatientTest {
         final String json = OBJECT_MAPPER.writeValueAsString(expected);
 
         final Patient observed = OBJECT_MAPPER.readValue(json, Patient.class);
-        
+
         Assert.assertEquals(expected, observed);
     }
 }
