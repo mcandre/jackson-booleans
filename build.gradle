@@ -1,0 +1,23 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+compileJava {
+  options.compilerArgs << '-Xlint:all'
+}
+
+repositories {
+  mavenCentral()
+}
+
+def jacksonVersion = '2.7.3'
+
+dependencies {
+  compile "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+  compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+  compile "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+
+  testCompile 'junit:junit:4.12'
+}
